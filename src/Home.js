@@ -1,76 +1,66 @@
 import React from 'react';
 import "./Home.css";
 import Product from './Product';
+import Data from "./data.json";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 function Home() {
   return <div className="home">
       <div className="home__container">
+        <Carousel>
+          <img className="home__image"
+          src="https://m.media-amazon.com/images/I/71MwDPWV9XL._SX3740_.jpg" alt=""> 
+          </img>
+          <img className="home__image"
+          src=" https://m.media-amazon.com/images/I/61nkZRiUABL._SX3740_.jpg" alt=""> 
+          </img>
+          <img className="home__image"
+          src="https://m.media-amazon.com/images/I/71hHxMf4KVL._SX3740_.jpg" alt=""> 
+          </img>
+          <img className="home__image"
+          src=" https://m.media-amazon.com/images/I/71nRigVIXuL._SX3740_.jpg" alt=""> 
+          </img>
+          <img className="home__image"
+          src=" https://m.media-amazon.com/images/I/61-e1sYEjoL._SX3740_.jpg" alt=""> 
+          </img>
+          <img className="home__image"
+          src="https://m.media-amazon.com/images/I/61jovjd+f9L._SX3000_.jpg" alt=""> 
+          </img>
+          <img className="home__image"
+          src="https://m.media-amazon.com/images/I/61TD5JLGhIL._SX3000_.jpg" alt=""> 
+          </img>
+          <img className="home__image"
+          src="https://m.media-amazon.com/images/I/71qid7QFWJL._SX3000_.jpg" alt=""> 
+          </img>
+          <img className="home__image"
+          src="https://m.media-amazon.com/images/I/51KPomo7-cL._SX1500_.jpg" alt=""> 
+          </img>
           <img className="home__image"
           src="https://m.media-amazon.com/images/I/616FAruqXHL._SX3000_.jpg" alt=""> 
           </img>
+          <img className="home__image"
+          src="https://m.media-amazon.com/images/I/61tuFkugZXL._SX3740_.jpg" alt=""> 
+          </img>
+          </Carousel>
         <div className="home__row">
-        <Product img="https://m.media-amazon.com/images/I/61rD22slk3L._AC_UL320_.jpg"
-                 title="Boult Audio Airbass Monopod Bluetooth"
-                 price="19.99"   
+        {
+          Data.map((items)=>{
+            return(
+              <>
+              <Product img={items.img}
+                 title={items.title}
+                 price={items.price}   
         />
-        <Product img="https://m.media-amazon.com/images/I/514JqtS2g3L._AC_UL320_.jpg"
-                 title="Boult Audio BassBuds X1 in-Ear Wired Earphones"
-                 price="23.12"/>
-        <Product img="https://m.media-amazon.com/images/I/71nLxM3voML._AC_UL320_.jpg"
-                 title="Boult Audio AirBass PowerBuds Bluetooth"
-                 price="15.21"/>
-        <Product img="https://m.media-amazon.com/images/I/51xUEICiCCL._AC_UL320_.jpg"
-                 title="Boult Audio BassBuds X1 in-Ear Wired Earphone"
-                 price="32.21"/>
-        <Product img="https://m.media-amazon.com/images/I/61plSs1NLmL._AC_UL320_.jpg"
-                 title="Boult Audio BassBuds Storm-X in-Ear"
-                 price="22.23"/>
-        </div>
+              </>
+            )
+          })
+        }
 
-        <div className="home__row">
-        <Product img="https://m.media-amazon.com/images/I/41ZrLumilFL._AC_SY200_.jpg"
-                 title="Forever Aloe Vera Gel 1 Liter 1000 ML"
-                 price="13.99"   
-        />
-        <Product img="https://m.media-amazon.com/images/I/61LOh1N7m1L._AC_SY200_.jpg"
-                 title="Endura Mass Weight Gainer  (Chocolate, 1 Kg)"
-                 price="29.12"/>
-        <Product img="https://m.media-amazon.com/images/I/71e8JE+fZnL._AC_SY200_.jpg"
-                 title="Ensure- Complete Nutrition for Adults"
-                 price="11.21"/>
-        <Product img="https://m.media-amazon.com/images/I/81bd3dyzSFL._AC_SY200_.jpg"
-                 title="Bournvita Complete Nutrition for Child "
-                 price="22.21"/>
-        <Product img="https://m.media-amazon.com/images/I/61P+mSAonyL._AC_SY200_.jpg"
-                 title="Bournvita Health Drink, 500 g"
-                 price="13.23"/>
-        </div>
-
-        <div className="home__row">
-        <Product img="https://m.media-amazon.com/images/I/717wYrO+b0L._AC_SY200_.jpg"
-                 title="Bosch Aquatak 125 1500-Watt "
-                 price="49.99"   
-        />
-        <Product img="https://m.media-amazon.com/images/I/818kmzObgCL._AC_SY200_.jpg"
-                 title="Bergmann Typhoon Heavy Duty Metal Car Tyre Inflator (Blue)"
-                 price="32.12"
-                 />
-        <Product img="https://m.media-amazon.com/images/I/71t9-9MtwkL._AC_SY200_.jpg"
-                 title="BLACK+DECKER BW16 1600Watt 125 Bar"
-                 price="43.21"
-                 />
-        <Product img="https://m.media-amazon.com/images/I/41oCKGsh-GL._AC_SY200_.jpg"
-                 title="Vega Crux Black Helmet-M"
-                 price="22.21"
-                 />
-        <Product img="https://m.media-amazon.com/images/I/71fRFM4eMYS._AC_SY200_.jpg"
-                 title="BLACK+DECKER BW13 1300Watt 100 Bar"
-                 price="36.23"
-                 />
-        </div>
-
-
-      </div>
+</div>
+</div>
   </div>;
 }
 
 export default Home;
+
+        
